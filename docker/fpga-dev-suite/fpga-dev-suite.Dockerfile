@@ -14,6 +14,7 @@ RUN apt install -y  \
         python3-pip
 
 RUN pip3 install --no-cache-dir --upgrade pip             \
+										  loguru          \
                                           numpy           \  
                                           matplotlib      \
                                           bokeh           \
@@ -35,5 +36,11 @@ RUN pip3 install --no-cache-dir --upgrade pip             \
                                           vcp                                                               
 
 ENV PATH="$PATH:/opt/oss-cad-suite/bin"
+
+LABEL maintainer="sibeov"
+LABEL name="fpga-dev-suite"
+LABEL version="0.0.1"
+LABEL descripton="FPGA Development Suite contains OSS CAD Suite and various Python tools for development \
+                  and verification of FPGA designs."
 
 ENTRYPOINT ["/bin/bash"]
