@@ -35,12 +35,10 @@ RUN pip3 install --no-cache-dir --upgrade pip             \
                                           vunit-hdl \
                                           vcp                                                               
 
-ENV PATH="$PATH:/opt/oss-cad-suite/bin"
-
 LABEL maintainer="sibeov"
 LABEL name="fpga-dev-suite"
 LABEL version="0.0.1"
 LABEL descripton="FPGA Development Suite contains OSS CAD Suite and various Python tools for development \
                   and verification of FPGA designs."
 
-ENTRYPOINT ["/bin/bash"]
+ENV PATH=$PATH:/opt/oss-cad-suite/bin
