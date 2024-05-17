@@ -1,3 +1,6 @@
 # Docker
 out/
 assets/
+
+# VScode
+.vscode/
