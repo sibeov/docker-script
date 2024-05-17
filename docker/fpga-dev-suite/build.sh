@@ -9,5 +9,5 @@ IMAGE_NAME="fpga-dev-suite"
 
 docker build -t "$IMAGE_NAME:$IMAGE_VERSION" \
 						 -t "$IMAGE_NAME:latest" \
-						 -o "$OUT_PATH" \
+						 -o type=tar,dest=$OUT_PATH/$IMAGE_NAME.tar \
              -f ./fpga-dev-suite.Dockerfile "$ROOT_PATH"
