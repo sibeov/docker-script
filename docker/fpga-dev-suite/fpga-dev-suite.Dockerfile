@@ -13,6 +13,8 @@ RUN apt install -y  \
         python3.11  \
         python3-pip
 
+RUN ln -sf /usr/bin/python3.11 /usr/bin/python3
+
 RUN pip3 install --no-cache-dir --upgrade pip             \
 										  loguru          \
                                           numpy           \  
@@ -41,4 +43,4 @@ LABEL version="0.0.1"
 LABEL descripton="FPGA Development Suite contains OSS CAD Suite and various Python tools for development \
                   and verification of FPGA designs."
 
-ENV PATH=$PATH:/opt/oss-cad-suite/bin
+RUN export PATH="${PATH}:/opt/oss-cad-suite/bin"
