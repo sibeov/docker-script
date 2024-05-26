@@ -9,37 +9,31 @@ ENV DEBIAN_FRONTEND=noninteractive
 COPY --from=extract /opt/oss-cad-suite /opt/oss-cad-suite
 
 RUN apt update && apt upgrade
-RUN apt install -y  \
-        python3.11  \
-        python3-pip
 
-RUN ln -sf /usr/bin/python3.11 /usr/bin/python3
-
-RUN pip3 install --no-cache-dir --upgrade pip             \
-										  loguru          \
-                                          numpy           \  
-                                          matplotlib      \
-                                          bokeh           \
-                                          scipy           \
-                                          cryptography    \
-                                          pycryptodome    \
-                                          pynacl          \
-                                          edalize         \
-                                          cocotb          \
-                                          cocotb-coverage \
-                                          cocotbext-axi   \
-                                          cocotbext-uart  \
-                                          cocotbext-spi   \
-                                          cocotbext-eth   \
-                                          cocotbext-pcie  \
-                                          https://github.com/alexforencich/cocotbext-i2c/archive/master.zip \
-                                          pyuvm     \
-                                          vunit-hdl \
-                                          vcp                                                               
+RUN /opt/oss-cad-suite/py3bin/pip3 install --no-cache-dir --upgrade pip             \
+                                                                    numpy           \  
+                                                                    matplotlib      \
+                                                                    bokeh           \
+                                                                    scipy           \
+                                                                    cryptography    \
+                                                                    pycryptodome    \
+                                                                    pynacl          \
+                                                                    edalize         \
+                                                                    cocotb          \
+                                                                    cocotb-coverage \
+                                                                    cocotbext-axi   \
+                                                                    cocotbext-uart  \
+                                                                    cocotbext-spi   \
+                                                                    cocotbext-eth   \
+                                                                    cocotbext-pcie  \
+                                                                    https://github.com/alexforencich/cocotbext-i2c/archive/master.zip \
+                                                                    pyuvm     \
+                                                                    vunit-hdl \
+                                                                    vcp                                                               
 
 LABEL maintainer="sibeov"
 LABEL name="fpga-dev-suite"
-LABEL version="0.0.1"
+LABEL version="0.0.2"
 LABEL descripton="FPGA Development Suite contains OSS CAD Suite and various Python tools for development \
                   and verification of FPGA designs."
 
