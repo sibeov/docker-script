@@ -1,21 +1,21 @@
-pip             \
-numpy           \  
-matplotlib      \
-bokeh           \
-scipy           \
-cryptography    \
-pycryptodome    \
-pynacl          \
-edalize         \
-cocotb          \
-cocotb-coverage \
-cocotbext-axi   \
-cocotbext-uart  \
-cocotbext-spi   \
-cocotbext-eth   \
-cocotbext-pcie  \
-https://github.com/alexforencich/cocotbext-i2c/archive/master.zip \
-pyuvm     \
-vunit-hdl \
-vsg       \
-vcp                                                               
+pip
+numpy
+matplotlib
+bokeh
+scipy
+cryptography
+pycryptodome
+pynacl
+edalize
+cocotb
+cocotb-coverage
+cocotbext-axi
+cocotbext-uart
+cocotbext-spi
+cocotbext-eth
+cocotbext-pcie
+https://github.com/alexforencich/cocotbext-i2c/archive/master.zip
+pyuvm
+vunit-hdl
+vsg
+vcp

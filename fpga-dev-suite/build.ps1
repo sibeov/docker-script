@@ -1,12 +1,12 @@
-$root_path = "../.."
+$root_path = "../"
 $output_path = "$root_path/out"
-$docker_file = Get-ChildItem ./fpga-dev-suite.Dockerfile
+$docker_file = "./Dockerfile"
 $image_version = Get-Content ./version
-$image_name = ($docker_file).BaseName
+$image_name = "fpga-dev-suite"
 
-Write-Verbose "Building Docker image $image_name : $image_version from $(($docker_file).Name)"
-docker build -t "$($image_name):$($image_version)" `
-             -t "$($image_name):latest" `
+Write-output "Building image $($image_name):$($image_version)"
+docker build . `
+			 -t "$($image_name):$($image_version)" `
+			 -t "$($image_name):latest" `
 			 --no-cache `
-             -o $output_path `
-             -f ($docker_file).Name $root_path
+			 -f $docker_file
